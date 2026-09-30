@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {"title": "Ampere.IQ", "menu_options": {"modbus": "Modbus (lokal)", "cloud": "Ampere.IQ Cloud"}},
+      "cloud": {"title": "Mit Ampere.IQ Cloud verbinden", "data": {"api_key": "API-Schlüssel"}},
+      "modbus": {"title": "Ampere StoragePro E3 verbinden", "description": "Modbus-TCP-Adresse eingeben. Die Betriebsmodus-Auswahl kann den E3 über eine direkte, schreibfähige Verbindung umstellen. Wegen der begrenzten Verbindungszahl müssen bestehende E3-Integrationen zuvor entfernt werden.", "data": {"host": "Speicher- oder Proxy-Adresse", "port": "Modbus-TCP-Port", "unit_id": "Modbus-Geräteadresse"}},
+      "reconfigure": {"title": "Modbus-Verbindung ändern", "description": "Adresse oder Proxy-Zugang des StoragePro E3 ändern. Es muss derselbe Speicher bleiben.", "data": {"host": "Speicher- oder Proxy-Adresse", "port": "Modbus-TCP-Port", "unit_id": "Modbus-Geräteadresse"}},
+      "installation": {"title": "Anlage auswählen", "data": {"installation_uuid": "Anlage"}},
+      "topology": {"title": "PV-Anlage auswählen", "description": "Wie viele PV-Wechselrichter bzw. Erzeugungsquellen sind angeschlossen? Bei einem E3 werden dessen Gesamtwert und native PV-Zähler verwendet; bei mehreren Quellen anschließend nicht überlappende Messkanäle wählen.", "data": {"pv_topology": "Wie viele Wechselrichter bzw. Erzeugungsquellen sind angeschlossen?"}},
+      "equipment": {"title": "Geräte und Abrufintervall auswählen", "description": "Bei mehreren PV-Quellen nur vorhandene, nicht überlappende MPPT- und Meter-Kanäle wählen. Der E3-Gesamtwert ist dann nicht auswählbar; der PV-Ertrag wird aus Leistungswerten berechnet.", "data": {"equipment": "Geräte", "poll_interval": "Abrufintervall (Sekunden)", "pv_sources": "PV-Messquellen"}},
+      "reauth_confirm": {"title": "API-Schlüssel erneuern", "data": {"api_key": "API-Schlüssel"}}
+    },
+    "error": {
+      "invalid_auth": "Ungültiger API-Schlüssel oder fehlende Berechtigung",
+      "cannot_connect": "Keine Verbindung zu EKD",
+      "invalid_response": "Unerwartete Antwort oder keine Anlagen vorhanden",
+      "invalid_installation": "Anlage mit diesem API-Schlüssel nicht erreichbar",
+      "invalid_options": "Gültige Geräte, PV-Quellen und ein gültiges Abrufintervall bzw. einen gültigen Modbus-Zugang wählen",
+      "modbus_conflict": "Ein Ampere.IQ-Modbus-Eintrag ist bereits vorhanden oder der bisherige StoragePro-E3-Eintrag wurde noch nicht entfernt. Den bestehenden Ampere.IQ-Eintrag neu konfigurieren statt einen zweiten anzulegen. Auch ein deaktivierter alter Eintrag sperrt Modbus; ein Proxy allein behebt den Konflikt nicht.",
+      "different_device": "Unter dieser Adresse antwortet ein anderer StoragePro-E3-Speicher"
+    },
+    "abort": {"already_configured": "Diese Anlage ist bereits eingerichtet", "invalid_installation": "Anlagenauswahl abgelaufen", "reconfigure_successful": "Modbus-Adresse geändert", "reauth_successful": "API-Schlüssel aktualisiert", "not_supported": "Diese Verbindung kann hier nicht neu konfiguriert werden"}
+  },
+  "options": {
+    "step": {"init": {"title": "Geräte und Abrufintervall", "data": {"equipment": "Geräte", "poll_interval": "Abrufintervall (Sekunden)"}}, "topology": {"title": "PV-Anlage auswählen", "description": "Wie viele PV-Wechselrichter bzw. Erzeugungsquellen sind angeschlossen? Bei einem E3 werden dessen Gesamtwert und native PV-Zähler verwendet; bei mehreren Quellen anschließend nicht überlappende Messkanäle wählen.", "data": {"pv_topology": "Wie viele Wechselrichter bzw. Erzeugungsquellen sind angeschlossen?"}}, "equipment": {"title": "Geräte und Abrufintervall auswählen", "description": "Bei mehreren PV-Quellen nur vorhandene, nicht überlappende MPPT- und Meter-Kanäle wählen. Der E3-Gesamtwert ist dann nicht auswählbar; der PV-Ertrag wird aus Leistungswerten berechnet.", "data": {"equipment": "Geräte", "poll_interval": "Abrufintervall (Sekunden)", "pv_sources": "PV-Messquellen"}}},
+    "error": {"invalid_options": "Mindestens ein Gerät und ein Abrufintervall von 10 bis 3600 Sekunden für Modbus (Cloud: 30 bis 3600 Sekunden) wählen"}
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {"title": "Ampere.IQ", "menu_options": {"modbus": "Local Modbus", "cloud": "Ampere.IQ Cloud"}},
+      "cloud": {"title": "Connect to Ampere.IQ Cloud", "data": {"api_key": "API key"}},
+      "modbus": {"title": "Connect to Ampere StoragePro E3", "description": "Enter the Modbus TCP endpoint. The work-mode selector can change the E3 mode through a direct, writable connection. Existing E3 integrations must first be removed because the device has a limited number of connections.", "data": {"host": "Host or proxy address", "port": "Modbus TCP port", "unit_id": "Modbus unit ID"}},
+      "reconfigure": {"title": "Change Modbus connection", "description": "Change the StoragePro E3 address or proxy endpoint. The storage system must remain the same.", "data": {"host": "Host or proxy address", "port": "Modbus TCP port", "unit_id": "Modbus unit ID"}},
+      "installation": {"title": "Choose installation", "data": {"installation_uuid": "Installation"}},
+      "topology": {"title": "Select PV installation", "description": "How many PV inverters or generation sources are connected? A single E3 uses its total and native counters; for multiple sources select non-overlapping channels next.", "data": {"pv_topology": "Number of generation sources"}},
+      "equipment": {"title": "Choose equipment and polling", "description": "For multiple PV sources select only installed, non-overlapping MPPT and meter channels. The E3 total is not selectable; PV yield is calculated from sampled power.", "data": {"equipment": "Equipment", "poll_interval": "Polling interval (seconds)", "pv_sources": "PV measurement sources"}},
+      "reauth_confirm": {"title": "Renew API key", "data": {"api_key": "API key"}}
+    },
+    "error": {
+      "invalid_auth": "Invalid API key or insufficient permissions",
+      "cannot_connect": "Cannot connect to EKD",
+      "invalid_response": "Unexpected response or no installations",
+      "invalid_installation": "Installation is not accessible with this API key",
+      "invalid_options": "Choose valid equipment, PV sources, and a valid polling interval or Modbus endpoint",
+      "modbus_conflict": "An Ampere.IQ Modbus entry already exists, or the legacy StoragePro E3 entry has not been removed. Reconfigure the existing Ampere.IQ entry instead of adding another. A disabled legacy entry still blocks local Modbus; a proxy alone does not remove the conflict.",
+      "different_device": "The endpoint belongs to a different StoragePro E3 device"
+    },
+    "abort": {"already_configured": "This installation is already configured", "invalid_installation": "Installation selection expired", "reconfigure_successful": "Modbus endpoint changed", "reauth_successful": "API key updated", "not_supported": "This connection cannot be reconfigured here"}
+  },
+  "options": {
+    "step": {"init": {"title": "Equipment and polling", "data": {"equipment": "Equipment", "poll_interval": "Polling interval (seconds)"}}, "topology": {"title": "Select PV installation", "description": "How many PV inverters or generation sources are connected? A single E3 uses its total and native counters; for multiple sources select non-overlapping channels next.", "data": {"pv_topology": "Number of generation sources"}}, "equipment": {"title": "Choose equipment and polling", "description": "For multiple PV sources select only installed, non-overlapping MPPT and meter channels. The E3 total is not selectable; PV yield is calculated from sampled power.", "data": {"equipment": "Equipment", "poll_interval": "Polling interval (seconds)", "pv_sources": "PV measurement sources"}}},
+    "error": {"invalid_options": "Choose valid equipment and an interval from 10 to 3600 seconds for Modbus (Cloud: 30 to 3600 seconds)"}
+  }
+}
