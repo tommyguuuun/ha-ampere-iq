@@ -317,6 +317,72 @@ class ModbusReader:
             values["generationTotal"] = None
         return values
 
+    async def read_optional(self, descriptions) -> dict[str, int | float | str | None]:
+        """Read only enabled optional fields over the existing serialized socket.
+
+        A missing/unreadable component is unknown, never a plausible zero.  A
+        transport failure is left to the optional coordinator and does not make
+        the independent power coordinator unavailable.
+        """
+        if not descriptions:
+            return {}
+        gate_addresses = {"bms1": 37002, "bms2": 37700,
+                          "meter1": 38801, "meter2": 38901}
+        result: dict[str, int | float | str | None] = {}
+        gates: dict[str, bool] = {}
+        for description in descriptions:
+            kind = description.kind
+            count = description.count
+            if (description.register_type not in ("input", "holding")
+                    or kind not in ("uint16", "int16", "uint32", "int32", "str", "bit16")
+                    or (kind in ("uint16", "int16", "bit16") and count != 1)
+                    or (kind in ("uint32", "int32") and count != 2)
+                    or kind == "str" and not 1 <= count <= 32):
+                raise ValueError("Unsupported optional register definition")
+            connection = description.connection
+            if connection is not None:
+                if connection not in gate_addresses:
+                    raise ValueError("Unsupported optional connection gate")
+                if (description.address == gate_addresses[connection]
+                        and description.register_type == "input" and count == 1):
+                    connection = None  # The disconnected flag itself is still 0.
+            # Each operation releases the lock separately: a timed-out gate
+            # and a timed-out field must not block a queued power poll twice.
+            if connection is not None:
+                if connection not in gates:
+                    async with self._lock:
+                        try:
+                            gates[connection] = (
+                                await self._read(gate_addresses[connection], 1)
+                            )[0] == 1
+                        except ModbusReadError:
+                            gates[connection] = False
+                if not gates[connection]:
+                    result[description.key] = None
+                    continue
+            async with self._lock:
+                try:
+                    words = await self._read(
+                        description.address, count, kind=description.register_type
+                    )
+                except ModbusReadError:
+                    result[description.key] = None
+                    continue
+            if kind == "str":
+                raw = b"".join(word.to_bytes(2, "big") for word in words)
+                try:
+                    text = raw.strip(b"\x00 ").decode("ascii")
+                except UnicodeDecodeError:
+                    text = ""
+                value = text if text and all(32 <= ord(c) <= 126 for c in text) else None
+            else:
+                number = self._unsigned32(words) if count == 2 else words[0]
+                if kind.startswith("int") and number & (1 << (count * 16 - 1)):
+                    number -= 1 << (count * 16)
+                value = number * description.scale
+            result[description.key] = value
+        return result
+
     async def daily_work(self) -> dict[str, int | None]:
         addresses = {
             "generation": 39603, "consumption": 39631,

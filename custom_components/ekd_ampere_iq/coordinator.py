@@ -128,3 +128,50 @@ class LifetimeCoordinator(DataUpdateCoordinator[dict]):
             return data
         except (ModbusConnectionError, ModbusReadError):
             raise UpdateFailed("EKD Modbus lifetime update failed") from None
+
+
+class OptionalCoordinator(DataUpdateCoordinator[dict]):
+    """Poll only enabled optional E3 entities without extra idle register reads."""
+
+    MAX_READS = 12
+
+    def __init__(self, hass, reader, entry, descriptions):
+        super().__init__(
+            hass, _LOGGER, name="Ampere.IQ optionale Messwerte",
+            config_entry=entry, update_interval=timedelta(seconds=60),
+        )
+        self.reader = reader
+        self.descriptions = tuple(descriptions)
+        self._cursor = 0
+        self.data_day = None
+
+    async def _async_update_data(self):
+        contexts = set(self.async_contexts())
+        active = [d for d in self.descriptions if d.key in contexts]
+        if not active:
+            return {}
+        start = self._cursor % len(active)
+        selected = tuple(
+            active[(start + index) % len(active)]
+            for index in range(min(self.MAX_READS, len(active)))
+        )
+        self._cursor = (start + len(selected)) % len(active)
+        daily = "inverter_generation_today"
+        started = dt_util.now() if any(d.key == daily for d in selected) else None
+        try:
+            values = await self.reader.read_optional(selected)
+            if not isinstance(values, dict):
+                raise ModbusReadError("Invalid optional register response")
+        except (ModbusConnectionError, ModbusReadError):
+            raise UpdateFailed("Optional E3 diagnostics update failed") from None
+        if started is not None:
+            completed = dt_util.now()
+            if (started.date() != completed.date()
+                    or not isinstance(values.get(daily), (int, float))):
+                values[daily] = None
+                self.data_day = None
+            else:
+                self.data_day = started.date()
+        previous = self.data if isinstance(self.data, dict) else {}
+        return {**{key: value for key, value in previous.items() if key in contexts},
+                **values}

@@ -254,6 +254,57 @@ class DiagnosticNumericSensor(CoordinatorEntity, SensorEntity):
         return value
 
 
+class OptionalSensor(CoordinatorEntity, SensorEntity):
+    """An opt-in, read-only E3 field with an independent slow polling context."""
+
+    _attr_has_entity_name = True
+    _attr_entity_registry_enabled_default = False
+
+    def __init__(self, coordinator, installation_uuid: str, description) -> None:
+        super().__init__(coordinator, context=description.key)
+        self._description = description
+        self._attr_name = description.name
+        self._attr_unique_id = f"{installation_uuid}_optional_{description.key}"
+        self.entity_id = f"sensor.{self.suggested_object_id}"
+        self._attr_native_unit_of_measurement = description.unit
+        self._attr_device_class = description.device_class
+        self._attr_state_class = getattr(description, "state_class", None)
+        if description.device_class is None:
+            self._attr_entity_category = EntityCategory.DIAGNOSTIC
+        self._attr_device_info = {
+            "identifiers": {(DOMAIN, installation_uuid)},
+            "name": "Ampere.IQ", "manufacturer": "EKD", "model": "Ampere StoragePro E3",
+        }
+
+    @property
+    def suggested_object_id(self) -> str:
+        return f"ampere_iq_{slugify(self._description.name)}"
+
+    @property
+    def last_reset(self):
+        """Anchor the optional daily counter to its successfully read local day."""
+        if self._description.key != "inverter_generation_today":
+            return None
+        day = getattr(self.coordinator, "data_day", None)
+        return dt_util.start_of_local_day(day) if day is not None else None
+
+    @property
+    def native_value(self) -> int | float | str | None:
+        if (self._description.key == "inverter_generation_today"
+                and getattr(self.coordinator, "data_day", None) != dt_util.now().date()):
+            return None
+        data = self.coordinator.data
+        value = data.get(self._description.key) if isinstance(data, dict) else None
+        if self._description.key == "network_status" and type(value) is int:
+            return {0: "Nicht verbunden", 1: "Verbindung unterbrochen",
+                    2: "Verbunden"}.get(value, f"Unbekannt ({value})")
+        if isinstance(value, (int, float)) and (isinstance(value, bool) or not isfinite(value)):
+            return None
+        if isinstance(value, str) and not value.strip():
+            return None
+        return value if isinstance(value, (int, float, str)) else None
+
+
 class EkdSensor(CoordinatorEntity, SensorEntity):
     """A coordinator-backed read-only measurement."""
 
@@ -452,6 +503,11 @@ def reconcile_entity_registry(hass, entry, installation_uuid: str) -> None:
         "battery_soh": "battery", "battery_temperature": "battery",
         "device_status": "system", "device_fault_reason": "system",
     })
+    optional_equipment = {}
+    if modbus:
+        from .optional_registers import OPTIONAL_REGISTERS
+
+        optional_equipment = {f"optional_{d.key}": d.equipment for d in OPTIONAL_REGISTERS}
     prefix = f"{installation_uuid}_"
     sources_signature = "_".join(sorted(entry.options.get(CONF_PV_SOURCES, DEFAULT_PV_SOURCES)))
     selected_derived = {
@@ -466,6 +522,29 @@ def reconcile_entity_registry(hass, entry, installation_uuid: str) -> None:
         ):
             continue
         key = entity.unique_id[len(prefix) :]
+        if key in optional_equipment:
+            # These entities are disabled by default. A temporary equipment
+            # deselection may hide a manually enabled one, but must not turn
+            # all default-disabled entities on when the equipment returns.
+            opted_in = entity.options.get(DOMAIN, {}).get("restore_after_equipment_selection")
+            if optional_equipment[key] not in selected:
+                if entity.disabled_by is None:
+                    registry.async_update_entity_options(
+                        entity.entity_id, DOMAIN,
+                        {**entity.options.get(DOMAIN, {}),
+                         "restore_after_equipment_selection": True},
+                    )
+                    registry.async_update_entity(
+                        entity.entity_id, disabled_by=er.RegistryEntryDisabler.INTEGRATION
+                    )
+            elif entity.disabled_by == er.RegistryEntryDisabler.INTEGRATION and opted_in:
+                registry.async_update_entity(entity.entity_id, disabled_by=None)
+                remaining = {k: v for k, v in entity.options.get(DOMAIN, {}).items()
+                             if k != "restore_after_equipment_selection"}
+                registry.async_update_entity_options(
+                    entity.entity_id, DOMAIN, remaining or None
+                )
+            continue
         derived = key.startswith(("pv_energy_today_", "pv_energy_total_"))
         equipment = equipment_by_key.get(key)
         if equipment is None and not derived:
@@ -532,6 +611,11 @@ async def async_setup_entry(hass, entry, async_add_entities) -> None:
                 for kind in ("soh", "temperature")
                 if modbus and "battery" in selected
                 and getattr(runtime, "diagnostics", None) is not None
+            ),
+            *(
+                OptionalSensor(runtime.optional, runtime.uuid, desc)
+                for desc in getattr(getattr(runtime, "optional", None), "descriptions", ())
+                if modbus
             ),
             *(
                 PvEnergySensor(

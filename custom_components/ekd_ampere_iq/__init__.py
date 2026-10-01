@@ -29,10 +29,12 @@ from .const import (
     CONNECTION_MODBUS,
     DEFAULT_POLL_INTERVAL,
     DEFAULT_PV_SOURCES,
+    MODBUS_EQUIPMENT,
 )
 from .coordinator import (
     DiagnosticsCoordinator,
     LifetimeCoordinator,
+    OptionalCoordinator,
     PowerCoordinator,
     WorkCoordinator,
 )
@@ -54,6 +56,7 @@ class EkdRuntimeData:
     pv_energy: PvEnergyAccumulator | None = None
     diagnostics: DiagnosticsCoordinator | None = None
     lifetime: LifetimeCoordinator | None = None
+    optional: OptionalCoordinator | None = None
 
 
 async def async_setup_entry(hass, entry) -> bool:
@@ -103,7 +106,8 @@ async def _async_setup_entry(hass, entry) -> bool:
         runtime = getattr(entry, "runtime_data", None)
         if runtime is not None:
             for coordinator in (
-                runtime.power, runtime.work, runtime.diagnostics, runtime.lifetime
+                runtime.power, runtime.work, runtime.diagnostics, runtime.lifetime,
+                runtime.optional,
             ):
                 if coordinator is not None:
                     coordinator.async_set_update_error(
@@ -161,11 +165,19 @@ async def _async_setup_entry(hass, entry) -> bool:
             work = WorkCoordinator(hass, api, uuid, entry)
             diagnostics = None
             lifetime = None
+            optional = None
         else:
+            from .optional_registers import OPTIONAL_REGISTERS
+
             power = PowerCoordinator(hass, api, uuid, entry, interval, modbus=True)
             work = WorkCoordinator(hass, api, uuid, entry, modbus=True)
             diagnostics = DiagnosticsCoordinator(hass, reader, entry)
             lifetime = LifetimeCoordinator(hass, reader, entry)
+            selected = set(entry.options.get(CONF_EQUIPMENT, MODBUS_EQUIPMENT))
+            optional = OptionalCoordinator(
+                hass, reader, entry,
+                tuple(d for d in OPTIONAL_REGISTERS if d.equipment in selected),
+            )
         await power.async_config_entry_first_refresh()
         # A new installation may not yet have today's history; keep power available.
         await work.async_refresh()
@@ -194,7 +206,8 @@ async def _async_setup_entry(hass, entry) -> bool:
                 # Do not log a storage exception's potentially sensitive path/data.
                 _LOGGER.warning("Calculated PV energy unavailable (%s)", type(err).__name__)
         entry.runtime_data = EkdRuntimeData(
-            uuid, power, work, connection_type, reader, pv_energy, diagnostics, lifetime
+            uuid, power, work, connection_type, reader, pv_energy, diagnostics, lifetime,
+            optional,
         )
         sensor.reconcile_entity_registry(hass, entry, uuid)
         sensor.reconcile_device_registry(hass, entry, uuid)

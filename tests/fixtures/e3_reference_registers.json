@@ -1,0 +1,2085 @@
+{
+  "source": "Sven0111/Ampere-StoragePro-E3@743d813 sensors.py",
+  "registers": [
+    {
+      "address": 30000,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 30016,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 30032,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 36001,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 36002,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 36003,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 36100,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 36116,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 36132,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 36148,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 36200,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 36216,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 36232,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 36248,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 37002,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37003,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37004,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37005,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 37032,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37033,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37034,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37097,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 37113,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 37609,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37610,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 37611,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "°C",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 37612,
+      "count": 1,
+      "scale": 1,
+      "unit": "%",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37617,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "°C",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 37618,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "°C",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 37619,
+      "count": 1,
+      "scale": 1,
+      "unit": "mV",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37620,
+      "count": 1,
+      "scale": 1,
+      "unit": "mV",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37624,
+      "count": 1,
+      "scale": 1,
+      "unit": "%",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37626,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 37627,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 37628,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 37629,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 37630,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 37631,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 37632,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Wh",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37633,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Ah",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37634,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 37635,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Wh",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37636,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37700,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37701,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37702,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37703,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 37730,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37731,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37732,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 37795,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 37811,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 38307,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38308,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 38309,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "°C",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 38310,
+      "count": 1,
+      "scale": 1,
+      "unit": "%",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38315,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "°C",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 38316,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "°C",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 38317,
+      "count": 1,
+      "scale": 1,
+      "unit": "mV",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38318,
+      "count": 1,
+      "scale": 1,
+      "unit": "mV",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38322,
+      "count": 1,
+      "scale": 1,
+      "unit": "%",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38324,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 38325,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 38326,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 38327,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 38328,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 38329,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 38330,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Wh",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38331,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Ah",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38332,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 38333,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Wh",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38334,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38801,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 38802,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38804,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38806,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38808,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38810,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38812,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38814,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38816,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38818,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38820,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38822,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38824,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38826,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38828,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38830,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38832,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38834,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38836,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38838,
+      "count": 2,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38840,
+      "count": 2,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38842,
+      "count": 2,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38844,
+      "count": 2,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38846,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "Hz",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38901,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "",
+      "visible": true
+    },
+    {
+      "address": 38902,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38904,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38906,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38908,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38910,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38912,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38914,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38916,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38918,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38920,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38922,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38924,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38926,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38928,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38930,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38932,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38934,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38936,
+      "count": 2,
+      "scale": 0.1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38938,
+      "count": 2,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38940,
+      "count": 2,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38942,
+      "count": 2,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38944,
+      "count": 2,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 38946,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "Hz",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39000,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39002,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 39018,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 39034,
+      "count": 16,
+      "scale": 1,
+      "unit": null,
+      "kind": "str",
+      "visible": true
+    },
+    {
+      "address": 39050,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 39051,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 39052,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 39053,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "kW",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39055,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "kW",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39057,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "kVA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39059,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "kVar",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39061,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "kVar",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39063,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 39064,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": false
+    },
+    {
+      "address": 39065,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 39067,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 39068,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 39069,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "bit16",
+      "visible": true
+    },
+    {
+      "address": 39070,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39071,
+      "count": 1,
+      "scale": 0.01,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39072,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39073,
+      "count": 1,
+      "scale": 0.01,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39074,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39075,
+      "count": 1,
+      "scale": 0.01,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39076,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39077,
+      "count": 1,
+      "scale": 0.01,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39118,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "kW",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39120,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "",
+      "visible": false
+    },
+    {
+      "address": 39121,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "",
+      "visible": false
+    },
+    {
+      "address": 39122,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "",
+      "visible": false
+    },
+    {
+      "address": 39123,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39124,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39125,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39126,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39128,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39130,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39132,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint32",
+      "visible": false
+    },
+    {
+      "address": 39134,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "kW",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39136,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "kVar",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39138,
+      "count": 1,
+      "scale": 0.001,
+      "unit": null,
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39139,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Hz",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39140,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "",
+      "visible": false
+    },
+    {
+      "address": 39141,
+      "count": 1,
+      "scale": 1,
+      "unit": "°C",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39142,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39143,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39144,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39145,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint32",
+      "visible": false
+    },
+    {
+      "address": 39147,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint32",
+      "visible": false
+    },
+    {
+      "address": 39149,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39151,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39153,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39154,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint32",
+      "visible": false
+    },
+    {
+      "address": 39156,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39157,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39158,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint32",
+      "visible": false
+    },
+    {
+      "address": 39160,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39161,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39162,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39164,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint32",
+      "visible": false
+    },
+    {
+      "address": 39166,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint32",
+      "visible": false
+    },
+    {
+      "address": 39168,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39170,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39171,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39172,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39200,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39201,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 39202,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 39203,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 39204,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39206,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39208,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39210,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39212,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39214,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39216,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39218,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Hz",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39219,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39221,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39223,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39225,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39227,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 39228,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39230,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39232,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "uint16",
+      "visible": true
+    },
+    {
+      "address": 39233,
+      "count": 2,
+      "scale": 0.001,
+      "unit": "A",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39235,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39237,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39239,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "int16",
+      "visible": false
+    },
+    {
+      "address": 39240,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "int16",
+      "visible": false
+    },
+    {
+      "address": 39241,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "int16",
+      "visible": false
+    },
+    {
+      "address": 39242,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "int32",
+      "visible": false
+    },
+    {
+      "address": 39244,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "int32",
+      "visible": false
+    },
+    {
+      "address": 39246,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "int32",
+      "visible": false
+    },
+    {
+      "address": 39248,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39250,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39252,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39254,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "int32",
+      "visible": false
+    },
+    {
+      "address": 39256,
+      "count": 2,
+      "scale": 1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39258,
+      "count": 2,
+      "scale": 1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39260,
+      "count": 2,
+      "scale": 1,
+      "unit": "Var",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39262,
+      "count": 2,
+      "scale": 1,
+      "unit": null,
+      "kind": "int32",
+      "visible": false
+    },
+    {
+      "address": 39264,
+      "count": 2,
+      "scale": 1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39266,
+      "count": 2,
+      "scale": 1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39268,
+      "count": 2,
+      "scale": 1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39270,
+      "count": 2,
+      "scale": 1,
+      "unit": "VA",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39272,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Hz",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39273,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Hz",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39274,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "Hz",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39275,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39277,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39279,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39281,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39283,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39285,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39327,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39328,
+      "count": 1,
+      "scale": 0.01,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39329,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39331,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39332,
+      "count": 1,
+      "scale": 0.01,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39333,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39335,
+      "count": 1,
+      "scale": 0.1,
+      "unit": "V",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39336,
+      "count": 1,
+      "scale": 0.01,
+      "unit": "A",
+      "kind": "int16",
+      "visible": true
+    },
+    {
+      "address": 39337,
+      "count": 2,
+      "scale": 1,
+      "unit": "W",
+      "kind": "int32",
+      "visible": true
+    },
+    {
+      "address": 39600,
+      "count": 1,
+      "scale": 1,
+      "unit": null,
+      "kind": "uint16",
+      "visible": false
+    },
+    {
+      "address": 39601,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39603,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39605,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39607,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39609,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39611,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39613,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39615,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39617,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39619,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39621,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39623,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39625,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39627,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39629,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    },
+    {
+      "address": 39631,
+      "count": 2,
+      "scale": 0.01,
+      "unit": "kWh",
+      "kind": "uint32",
+      "visible": true
+    }
+  ]
+}
