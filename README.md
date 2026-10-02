@@ -33,7 +33,7 @@ Die Cloud ist sinnvoll, wenn du auch Wallbox- oder Wärmepumpenwerte der Ampere.
 
 ### ☁️ Ampere.IQ Cloud einrichten
 
-1. Deinen gültigen **EKD-API-Schlüssel** im Home-Assistant-Assistenten eingeben. Der Schlüssel gehört nicht in YAML oder in eine GitHub-Issue.
+1. In der **Ampere.IQ-App** auf dem Handy unter **Einstellungen/Mehr → Konfiguration API-Zugang** einen persönlichen API-Schlüssel erstellen und im Home-Assistant-Assistenten eingeben. Veröffentliche den Schlüssel nicht in einer GitHub-Issue.
 2. Falls der Schlüssel mehrere Anlagen freigibt, die gewünschte Anlage auswählen.
 3. Vorhandene Geräte auswählen: Wechselrichter, Batterie, Wärmepumpe und/oder Wallbox. Das Leistungsintervall beginnt bei 30 Sekunden; der Standardwert ist 60 Sekunden.
 
