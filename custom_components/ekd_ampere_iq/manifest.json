@@ -1,7 +1,7 @@
 {
   "domain": "ekd_ampere_iq",
   "name": "Ampere.IQ",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "documentation": "https://developer.ekd-solar.de",
   "issue_tracker": "https://github.com/tommyguuuun/ha-ampere-iq/issues",
   "codeowners": [],
